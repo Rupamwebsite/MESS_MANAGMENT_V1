@@ -1,0 +1,16 @@
+{
+  "name": "maa-annapurna-pg",
+  "version": "1.0.0",
+  "description": "Maa Annapurna PG Website",
+  "main": "server.js",
+  "scripts": {
+    "start": "node server.js",
+    "dev": "node server.js"
+  },
+  "keywords": ["pg", "hostel", "website"],
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "express": "^4.18.2"
+  }
+}
