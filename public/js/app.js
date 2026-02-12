@@ -111,6 +111,47 @@ document.addEventListener('DOMContentLoaded', () => {
         });
     }
 
+    // --- Mobile Menu ---
+    const hamburger = document.querySelector('.hamburger');
+    const mobileMenuOverlay = document.querySelector('.mobile-menu-overlay');
+    const mobileMenuClose = document.querySelector('.mobile-menu-close');
+    const mobileNavLinks = document.querySelectorAll('.mobile-nav-link');
+    const body = document.body;
+
+    const openMobileMenu = () => {
+        mobileMenuOverlay.classList.add('active');
+        body.style.overflow = 'hidden';
+    };
+
+    const closeMobileMenu = () => {
+        mobileMenuOverlay.classList.remove('active');
+        body.style.overflow = '';
+    };
+
+    if (hamburger) {
+        hamburger.addEventListener('click', openMobileMenu);
+    }
+
+    if (mobileMenuClose) {
+        mobileMenuClose.addEventListener('click', closeMobileMenu);
+    }
+
+    // Close menu when clicking on overlay
+    if (mobileMenuOverlay) {
+        mobileMenuOverlay.addEventListener('click', (e) => {
+            if (e.target === mobileMenuOverlay) {
+                closeMobileMenu();
+            }
+        });
+    }
+
+    // Close menu when clicking on a navigation link
+    mobileNavLinks.forEach(link => {
+        link.addEventListener('click', () => {
+            closeMobileMenu();
+        });
+    });
+
     // --- Smooth Scrolling for Anchors ---
 });
 
